@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+
 }
 
 android {
@@ -45,4 +46,16 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //app firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+
+    //firebase dependencies
+    implementation(libs.circleimageview)
+    implementation(libs.picasso)
+    implementation(libs.androidx.cardview)
+    implementation(libs.library)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
 }
