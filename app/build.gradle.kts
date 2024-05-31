@@ -16,6 +16,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled =true
     }
 
     buildTypes {
@@ -43,19 +45,19 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.navigation.fragment)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.multidex)
 
-    //app firebase
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.analytics)
+// circle image view dependency
+    implementation(libs.circleimageview.v310)
 
-    //firebase dependencies
-    implementation(libs.circleimageview)
-    implementation(libs.picasso)
-    implementation(libs.androidx.cardview)
-    implementation(libs.library)
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
+//    // navhost dependency
+  implementation(libs.androidx.navigation.fragment.ktx)
+//    implementation(libs.androidx.navigation.ui.ktx)
+//    implementation(libs.library)
 }
+
+

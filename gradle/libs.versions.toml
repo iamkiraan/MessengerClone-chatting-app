@@ -2,25 +2,34 @@
 agp = "8.4.1"
 cardview = "1.0.0"
 circleimageview = "2.2.0"
+circleimageviewVersion = "3.1.0"
 converterGson = "2.9.0"
-firebaseBom = "33.0.0"
+firebaseBom = "33.1.0"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
-appcompat = "1.6.1"
+appcompat = "1.7.0"
 library = "2.1.4"
 material = "1.12.0"
 activity = "1.9.0"
 constraintlayout = "2.1.4"
+multidex = "2.0.1"
+multidexVersion = "2.0.1"
+navigationFragmentKtx = "2.7.7"
 picasso = "2.71828"
 retrofit = "2.9.0"
+navigationFragment = "2.7.7"
 
 [libraries]
 androidx-cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "multidexVersion" }
+androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationFragmentKtx" }
 circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
+circleimageview-v310 = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageviewVersion" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
@@ -32,8 +41,10 @@ library = { module = "com.rengwuxian.materialedittext:library", version.ref = "l
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+multidex = { module = "com.android.support:multidex", version.ref = "multidex" }
 picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+androidx-navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigationFragment" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

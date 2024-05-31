@@ -12,10 +12,40 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_main"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/primaryColor"/>
+            android:background="@color/primaryColor">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:id="@+id/profile_image"
+                android:src="@drawable/baseline_person_24"
+                android:tint="@color/white">
 
+            </de.hdodenhof.circleimageview.CircleImageView>
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="username"
+                android:textSize="18sp"
+                android:layout_marginLeft="26dp"
+                android:textStyle="bold"
+                android:textColor="@color/white">
+
+            </TextView>
+        </androidx.appcompat.widget.Toolbar>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/darkprimaryColor"
+            app:tabIndicatorColor="@color/white"/>
     </com.google.android.material.appbar.AppBarLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ViewPager"/>
 
 </LinearLayout>
