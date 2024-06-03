@@ -21,6 +21,7 @@ navigationFragmentKtx = "2.7.7"
 picasso = "2.71828"
 retrofit = "2.9.0"
 navigationFragment = "2.7.7"
+firebaseAuthKtx = "23.0.0"
 
 [libraries]
 androidx-cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" }
@@ -45,6 +46,7 @@ multidex = { module = "com.android.support:multidex", version.ref = "multidex" }
 picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 androidx-navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigationFragment" }
+firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

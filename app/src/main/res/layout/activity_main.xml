@@ -23,6 +23,7 @@
                 android:src="@drawable/baseline_person_24"
                 android:tint="@color/white">
 
+
             </de.hdodenhof.circleimageview.CircleImageView>
             <TextView
                 android:id="@+id/username"
@@ -35,13 +36,21 @@
                 android:textColor="@color/white">
 
             </TextView>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/round_more_vert_24"
+                android:tint="@color/white"
+                android:layout_marginEnd="20dp"
+                android:layout_gravity="end"/>
         </androidx.appcompat.widget.Toolbar>
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/darkprimaryColor"
-            app:tabIndicatorColor="@color/white"/>
+            app:tabIndicatorColor="@color/white"
+           />
     </com.google.android.material.appbar.AppBarLayout>
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
