@@ -63,6 +63,8 @@ dependencies {
   implementation(libs.androidx.navigation.fragment.ktx)
 //    implementation(libs.androidx.navigation.ui.ktx)
 //    implementation(libs.library)
+    //picasso library dependency for downloading images
+    implementation(libs.picasso.v28)
 }
 
 

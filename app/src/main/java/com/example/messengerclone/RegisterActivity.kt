@@ -13,6 +13,7 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import java.util.Locale
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var register : Button
@@ -41,6 +42,7 @@ class RegisterActivity : AppCompatActivity() {
 
 
    auth = FirebaseAuth.getInstance()
+
         register.setOnClickListener{
             registerUser()
         }
@@ -75,11 +77,11 @@ class RegisterActivity : AppCompatActivity() {
                         refusers = FirebaseDatabase.getInstance().reference.child("users").child(firebaseUserId)
                         val userHashMap = HashMap<String,Any>()
                         userHashMap["uid"] = firebaseUserId
-                        userHashMap["usernname"] = Username
+                        userHashMap["username"] = Username
                         userHashMap["profile"] = "https://firebasestorage.googleapis.com/v0/b/mechat-784a7.appspot.com/o/profileFb.png?alt=media&token=1bbf9432-d4bf-4ebe-85f7-a970b534e0c0"
                         userHashMap["cover"] = "https://firebasestorage.googleapis.com/v0/b/mechat-784a7.appspot.com/o/cover.jpg?alt=media&token=e2a53d69-e0ca-47da-b799-16ce3f0c8045"
                         userHashMap["status"] = "offline"
-                        userHashMap["search"] = Username.toLowerCase()
+                        userHashMap["search"] = Username.toLowerCase(Locale.ROOT)
                         userHashMap["facebook"] = "https://m.instagram.com"
                         userHashMap["website"] = "https://www.google.com"
                         refusers.updateChildren(userHashMap)
