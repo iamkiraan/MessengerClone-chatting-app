@@ -20,6 +20,7 @@ multidex = "2.0.1"
 multidexVersion = "2.0.1"
 navigationFragmentKtx = "2.7.7"
 picasso = "2.71828"
+picassoVersion = "2.8"
 retrofit = "2.9.0"
 navigationFragment = "2.7.7"
 firebaseAuthKtx = "23.0.0"
@@ -50,6 +51,7 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 multidex = { module = "com.android.support:multidex", version.ref = "multidex" }
 picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
+picasso-v28 = { module = "com.squareup.picasso:picasso", version.ref = "picassoVersion" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 androidx-navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigationFragment" }
 firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
