@@ -1,6 +1,8 @@
 package com.example.messengerclone
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -32,26 +34,26 @@ class MainActivity : AppCompatActivity() {
     var firebasUser: FirebaseUser?=null
     private lateinit var username : TextView
     private lateinit var profile_image : CircleImageView
+    private lateinit var signout : CircleImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        val toolbar : Toolbar = findViewById(R.id.toolbar_main)
+        setSupportActionBar(toolbar)
+        supportActionBar!!.title =""
 
-        }
+
         username = findViewById(R.id.username)
         profile_image = findViewById(R.id.profile_image)
         firebasUser = FirebaseAuth.getInstance().currentUser
         refUsers = FirebaseDatabase.getInstance().reference.child("users").child(firebasUser!!.uid)
-        val toolbar : Toolbar = findViewById(R.id.toolbar_main)
-        setSupportActionBar(toolbar)
-        supportActionBar!!.title =""
+
         val tabLayout : TabLayout = findViewById(R.id.tabLayout)
         val viewPager : ViewPager =  findViewById(R.id.ViewPager)
-        val ViewPageAdapter = viewPagerAdapter(supportFragmentManager)
+        val ViewPageAdapter = ViewPagerAdapter(supportFragmentManager)
+
+
         ViewPageAdapter.addFragments(chatFragment(),"chats")
         ViewPageAdapter.addFragments(SearchFragment(),"Search")
         ViewPageAdapter.addFragments(SettingFragment(),"Setting")
@@ -76,10 +78,27 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-    internal class viewPagerAdapter(fragmentManager : FragmentManager):
+
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//       menuInflater.inflate(R.menu.menu_main,menu)
+//        return true
+//    }
+//    override fun onOptionsItemSelected(item:MenuItem):Boolean{
+//        return when(item.itemId){
+//            R.id.action_settings -> true
+//            else -> super.onOptionsItemSelected(item)
+//        }
+
+    }
+    internal class ViewPagerAdapter(fragmentManager : FragmentManager):
             FragmentPagerAdapter(fragmentManager){
-                private val fragments:ArrayList<Fragment> = ArrayList<Fragment>()
-                private val titles:ArrayList<String> = ArrayList<String>()
+                private val fragments:ArrayList<Fragment>
+                private val titles:ArrayList<String>
+        init{
+            fragments =ArrayList<Fragment>()
+            titles = ArrayList<String>()
+        }
+
 
 
         override fun getCount(): Int {
@@ -94,9 +113,8 @@ class MainActivity : AppCompatActivity() {
             fragments.add(fragment)
             titles.add(title)
         }
-        override fun getPageTitle(i:Int): CharSequence?{
+        override fun getPageTitle(i:Int): CharSequence {
             return titles[i]
         }
 
     }
-}
